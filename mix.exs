@@ -22,7 +22,10 @@ defmodule LivebookSidecar.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:timex, "~> 3.7.6"}
+      {:timex, "~> 3.7.6"},
+      {:livebook, "~> 0.2.3"},
+      {:vega_lite, "~> 0.1.0"},
+      {:kino, "~> 0.3.0"},
     ]
   end
 end

@@ -1,0 +1,24 @@
+<!-- livebook:{"persist_outputs":true} -->
+
+# Livebook Sidecar
+
+## Demo
+
+[Livebook Sidecar](https://github.com/kentaro/livebook_sidecar) demonstrates how to utilize Livebook as an easy-to-use UI builder for your Elixir application.
+
+```elixir
+alias VegaLite, as: Vl
+
+data =
+  LivebookSidecar.retrieve_data()
+  |> Enum.map(fn row ->
+    {:ok, datetime} = Timex.format(row.datetime, "{ISO:Extended}")
+    Map.put(row, :datetime, datetime)
+  end)
+
+Vl.new(width: 800, height: 400)
+|> Vl.data_from_values(data)
+|> Vl.mark(:line)
+|> Vl.encode_field(:x, "datetime", type: :temporal, title: "time")
+|> Vl.encode_field(:y, "count", type: :quantitative, title: "count")
+```
