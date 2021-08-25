@@ -1,18 +1,5 @@
 defmodule LivebookSidecar do
-  @moduledoc """
-  Documentation for `LivebookSidecar`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> LivebookSidecar.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def retrieve_data() do
+    GenServer.call(LivebookSidecar.Worker, :retrieve_data)
   end
 end
