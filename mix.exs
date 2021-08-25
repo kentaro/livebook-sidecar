@@ -25,7 +25,7 @@ defmodule LivebookSidecar.MixProject do
       {:timex, "~> 3.7.6"},
       {:livebook, "~> 0.2.3"},
       {:vega_lite, "~> 0.1.0"},
-      {:kino, "~> 0.3.0"},
+      {:kino, "~> 0.3.0"}
     ]
   end
 end

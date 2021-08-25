@@ -23,7 +23,7 @@ defmodule LivebookSidecar.Worker do
       |> Enum.concat([
         %{
           datetime: Timex.now("Asia/Tokyo"),
-          count: Enum.random(0..100),
+          count: Enum.random(0..100)
         }
       ])
 
